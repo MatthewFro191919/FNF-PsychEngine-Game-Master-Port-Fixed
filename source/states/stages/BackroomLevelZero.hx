@@ -3,7 +3,7 @@ package states.stages;
 import states.stages.objects.*;
 import backend.Song;
 import flixel.ui.FlxBar;
-import states.PlayState;
+import objects.Bar;
 
 class BackroomLevelZero extends BaseStage
 {
