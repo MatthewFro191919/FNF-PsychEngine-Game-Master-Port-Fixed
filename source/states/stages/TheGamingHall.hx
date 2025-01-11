@@ -328,7 +328,6 @@ class TheGamingHall extends BaseStage
 		{
 			strumLineNotes.visible = true;
 			healthBar.visible = true;
-			healthBarBG.visible = true;
 			iconP1.visible = true;
 			iconP2.visible = true;
 			scoreTxt.visible = true;
@@ -341,7 +340,6 @@ class TheGamingHall extends BaseStage
 		{
 			strumLineNotes.visible = false;
 			healthBar.visible = false;
-			healthBarBG.visible = false;
 			iconP1.visible = false;
 			iconP2.visible = false;
 			scoreTxt.visible = false;
