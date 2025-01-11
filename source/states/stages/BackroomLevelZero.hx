@@ -109,21 +109,6 @@ class BackroomLevelZero extends BaseStage
 
 	function entityBFMonster():Void // a kiler
 	{
-		if (!swapHealth && healthBar.percent < 45 || swapHealth == true && healthBar.percent > 64)
-		{
-			tvActive = true;
-			screenStatics.animation.play('tvCorrupt');
-			bfEntity.alpha = randomRangeFloat(0.4, 0.8);
-		}
-		if (!swapHealth && healthBar.percent > 46 || swapHealth == true && healthBar.percent < 65)
-		{
-			tvActive = false;
-			screenStatics.alpha -= 0.025;
-			screenStatics.animation.play('tvCorrupt');
-			tvStaticSound.volume -= 0.025;
-			bfEntity.x += 10;
-			bfEntity.alpha -= 0.05;
-		}
 		if (bfEntity.x < closeDis)
 		{
 			bfEntity.animation.play('close');
