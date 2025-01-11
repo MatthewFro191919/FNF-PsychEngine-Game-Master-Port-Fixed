@@ -3,6 +3,7 @@ package states.stages;
 import states.stages.objects.*;
 import backend.Song;
 import flixel.ui.FlxBar;
+import states.PlayState;
 
 class BackroomLevelZero extends BaseStage
 {
@@ -109,6 +110,21 @@ class BackroomLevelZero extends BaseStage
 
 	function entityBFMonster():Void // a kiler
 	{
+		if (!swapHealth && PlayState.healthBar.percent < 45 || swapHealth == true && PlayState.healthBar.percent > 64)
+		{
+			tvActive = true;
+			screenStatics.animation.play('tvCorrupt');
+			bfEntity.alpha = randomRangeFloat(0.4, 0.8);
+		}
+		if (!swapHealth && PlayState.healthBar.percent > 46 || swapHealth == true && PlayState.healthBar.percent < 65)
+		{
+			tvActive = false;
+			screenStatics.alpha -= 0.025;
+			screenStatics.animation.play('tvCorrupt');
+			tvStaticSound.volume -= 0.025;
+			bfEntity.x += 10;
+			bfEntity.alpha -= 0.05;
+		}
 		if (bfEntity.x < closeDis)
 		{
 			bfEntity.animation.play('close');
