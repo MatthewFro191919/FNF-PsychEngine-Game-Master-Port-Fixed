@@ -81,7 +81,18 @@ class BackroomLevelZero extends BaseStage
 	var healthBar:Bar;
 
 	var iconP1:HealthIcon;
-        var iconP2:HealthIcon;
+	var iconP2:HealthIcon;
+	var camHUD:FlxCamera;
+	var camGame:FlxCamera;
+	var camOther:FlxCamera;
+	var cameraSpeed:Float = 1;
+
+	var songScore:Int = 0;
+	var songHits:Int = 0;
+	var songMisses:Int = 0;
+	var scoreTxt:FlxText;
+	var timeTxt:FlxText;
+	var scoreTxtTween:FlxTween;
 
 	var gfSpeed:Int = 1;
 	var health(default, set):Float = 1;
@@ -89,7 +100,7 @@ class BackroomLevelZero extends BaseStage
 
 	var glitchCover:FlxTypedGroup<FlxSprite>;
 
-	public function randomRangeFloat(min:Float, max:Float):Float {
+	function randomRangeFloat(min:Float, max:Float):Float {
 		return Math.floor(Math.random() * (1 + max - min)) + min;
 	}
 
