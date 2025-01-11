@@ -78,13 +78,11 @@ class BackroomLevelZero extends BaseStage
 	var loadRep:Bool = false;
 
 	var halloweenLevel:Bool = false;
+
 	var healthBar:Bar;
 
 	var iconP1:HealthIcon;
 	var iconP2:HealthIcon;
-	var camHUD:FlxCamera;
-	var camGame:FlxCamera;
-	var camOther:FlxCamera;
 	var cameraSpeed:Float = 1;
 
 	var songScore:Int = 0;
