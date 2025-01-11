@@ -5,6 +5,7 @@ import backend.Song;
 import flixel.ui.FlxBar;
 import objects.Bar;
 import motion.Actuate;
+import objects.HealthIcon;
 
 class TheGamingHall extends BaseStage
 {
