@@ -99,6 +99,11 @@ class TheGamingHall extends BaseStage
 
 	var glitchCover:FlxTypedGroup<FlxSprite>;
 
+	var strumLineNotes:FlxTypedGroup<StrumNote> = new FlxTypedGroup<StrumNote>();
+	var opponentStrums:FlxTypedGroup<StrumNote> = new FlxTypedGroup<StrumNote>();
+	var playerStrums:FlxTypedGroup<StrumNote> = new FlxTypedGroup<StrumNote>();
+	var grpNoteSplashes:FlxTypedGroup<NoteSplash> = new FlxTypedGroup<NoteSplash>();
+
 	function randomRangeFloat(min:Float, max:Float):Float {
 		return Math.floor(Math.random() * (1 + max - min)) + min;
 	}
