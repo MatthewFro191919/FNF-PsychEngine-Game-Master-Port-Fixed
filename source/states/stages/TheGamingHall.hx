@@ -3,7 +3,7 @@ package states.stages;
 import states.stages.objects.*;
 import backend.Song;
 import flixel.ui.FlxBar;
-import states.PlayState;
+import motion.Actuate;
 
 class TheGamingHall extends BaseStage
 {
@@ -78,6 +78,21 @@ class TheGamingHall extends BaseStage
 
 	var halloweenLevel:Bool = false;
 
+	var healthBar:Bar;
+
+	var iconP1:HealthIcon;
+        var iconP2:HealthIcon;
+
+	var gfSpeed:Int = 1;
+	var health(default, set):Float = 1;
+	var combo:Int = 0;
+
+	var glitchCover:FlxTypedGroup<FlxSprite>;
+
+	public function randomRangeFloat(min:Float, max:Float):Float {
+		return Math.floor(Math.random() * (1 + max - min)) + min;
+	}
+
 	override function create()
 	{
 			var behindGaming:FlxSprite = new FlxSprite(50, 85).loadGraphic(Paths.image('WrongArea/TheGamingHall_Background_Behind'));
@@ -114,13 +129,13 @@ class TheGamingHall extends BaseStage
 
 	function entityBFMonster():Void // a kiler
 	{
-		if (!swapHealth && PlayState.healthBar.percent < 45 || swapHealth == true && PlayState.healthBar.percent > 64)
+		if (!swapHealth && healthBar.percent < 45 || swapHealth == true && healthBar.percent > 64)
 		{
 			tvActive = true;
 			screenStatics.animation.play('tvCorrupt');
 			bfEntity.alpha = randomRangeFloat(0.4, 0.8);
 		}
-		if (!swapHealth && PlayState.healthBar.percent > 46 || swapHealth == true && PlayState.healthBar.percent < 65)
+		if (!swapHealth && healthBar.percent > 46 || swapHealth == true && healthBar.percent < 65)
 		{
 			tvActive = false;
 			screenStatics.alpha -= 0.025;
