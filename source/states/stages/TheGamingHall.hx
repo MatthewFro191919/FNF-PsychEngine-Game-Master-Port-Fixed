@@ -84,9 +84,6 @@ class TheGamingHall extends BaseStage
 
 	var iconP1:HealthIcon;
 	var iconP2:HealthIcon;
-	var camHUD:FlxCamera;
-	var camGame:FlxCamera;
-	var camOther:FlxCamera;
 	var cameraSpeed:Float = 1;
 
 	var songScore:Int = 0;
@@ -105,6 +102,7 @@ class TheGamingHall extends BaseStage
 	function randomRangeFloat(min:Float, max:Float):Float {
 		return Math.floor(Math.random() * (1 + max - min)) + min;
 	}
+
 
 	override function create()
 	{
