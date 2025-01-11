@@ -113,13 +113,13 @@ class TheGamingHall extends BaseStage
 
 	function entityBFMonster():Void // a kiler
 	{
-		if (!swapHealth && healthBar.percent < 45 || swapHealth == true && healthBar.percent > 64)
+		if (!swapHealth && PlayState.healthBar.percent < 45 || swapHealth == true && PlayState.healthBar.percent > 64)
 		{
 			tvActive = true;
 			screenStatics.animation.play('tvCorrupt');
 			bfEntity.alpha = randomRangeFloat(0.4, 0.8);
 		}
-		if (!swapHealth && healthBar.percent > 46 || swapHealth == true && healthBar.percent < 65)
+		if (!swapHealth && PlayState.healthBar.percent > 46 || swapHealth == true && PlayState.healthBar.percent < 65)
 		{
 			tvActive = false;
 			screenStatics.alpha -= 0.025;
